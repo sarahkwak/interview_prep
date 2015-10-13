@@ -53,4 +53,25 @@ def nth_from_last(node, n)
   end
 end
 
- p nth_from_last(myList, 5)
+ # p nth_from_last(myList, 5)
+
+ def find_the_last(node, num)
+  first_node = node
+  next_node = node.next
+  if first_node.next == nil
+    return nil
+  end
+  (num-1).times do
+    if next_node.next == nil
+      return nil
+    end
+    next_node = next_node.next
+  end
+  while true
+    if node.next_node == nil
+      return first_node
+    end
+      next_node = next_node.next
+      first_node = first_node.next
+  end
+end
