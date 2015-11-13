@@ -16,5 +16,25 @@ def seesaw(arr)
   end
   return false
 end
-example = [1,3,10,2,5,6,9,4,1,4,8,14,6, 3]
-p seasaw(example)
+
+
+
+def seesaw2(arr)
+  i = 0
+  j = (arr.length-1) 
+  while i-j != 1 or i-j != -1
+    if right_sum > left_sum
+      j-=1
+      left_sum+=arr[j]
+    return true if right_sum == left_sum 
+    else
+      i+=1
+      right_sum += arr[i]
+    return true if right_sum == left_sum  
+    end
+  end
+  return false
+end 
+example = [1,3,10,2,5,6,9,4,1,4,8,14,1,3,73,143, 286]
+p seesaw2(example)
+# p example.reduce(:+)

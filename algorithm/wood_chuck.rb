@@ -75,19 +75,41 @@
 #   arr_hash.select { |k,v| puts k if v <= 1 }
 # end
 
-# def left_join(arr1, arr2)
-#   arr_hash = Hash.new(0)
-#   arr1.each do |num|
-#     arr_hash[num] = 1
-#   end
-#   arr2.each do |num|
-#     arr_hash[num]-=1
-#   end
-#   arr_hash.select { |k,v| puts k if v == 1 }
-# end
+def left_join(arr1, arr2)
+  arr_hash = Hash.new(0)
+  arr1.each do |num|
+    arr_hash[num] = 1
+  end
+  arr2.each do |num|
+    arr_hash[num]-=1
+  end
+  arr_hash.select { |k,v| puts k if v == 1 }
+end
 
 sentence = "First off hi back at ya, in My neck of the woods (Northern Michigan) the NA tribes used wood wood wood both snapping turtle neck skin and wood chuck hide. The woodchuck hide was and is looks pretty cool. Here's a pic of a Potawatomi bow with the original is string....it's from the Peabody Museum. Sorta looks like one big string silencer to me, the eh? we we we we we"
-first = [1,1,2,3,4,5]
-second = [3,4,5,6,7,8]
+
+def find_frequent_word(sentence)
+  words = sentence.split(' ')
+  hash = Hash.new(0)
+  words.each do |word|
+    hash[word] = hash[word]+=1
+  end
+  max_value = hash.values.max
+  hash.select { |key, value| p key if value == max_value}
+end 
 # find_frequent_word(sentence)
-# left_join(first, second)
+
+def left_join(arr1, arr2)
+  hash = Hash.new
+  arr1.each do |ele|
+    hash[ele] = true
+  end 
+  arr2.each do |ele|
+    if hash[ele] = false
+    end 
+  end
+  hash.select { |k, v| p k if v == true }
+end 
+first = [1,1,2,3,4,5]
+second = [4,5,6,7,8]
+left_join(first, second)
